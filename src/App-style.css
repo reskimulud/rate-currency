@@ -1,0 +1,43 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+td {
+    border-bottom: .2px solid rgb(255, 226, 203);
+    padding: 10px 20px;
+}
+
+th {
+    border-bottom: 2px solid #fff;
+    padding: 10px 20px;
+}
+
+.small {
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: papayawhip;
+    font-weight: bolder;
+}
+
+a:hover {
+    color: salmon;
+}
+
+.info {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}

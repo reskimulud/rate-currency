@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import './App-style.css'
 
 const App = () => {
   
@@ -64,22 +65,28 @@ const App = () => {
 
   return (
     <>
-      <table align="center">
-        <tr>
-          <th></th>
-          <th>WE BUY</th>
-          <th>EXCHANGE RATE</th>
-          <th>WE SELL</th>
-        </tr>
-        {curse.map((item, index) => (
-          <tr key={index}>
-            <td>{item.name}</td>
-            <td>{getWeBuy(item.rate, item.margin)}</td>
-            <td>{item.rate}</td>
-            <td>{getWeSell(item.rate, item.margin)}</td>
+      <div className="container">
+        <table>
+          <tr>
+            <th></th>
+            <th>WE BUY</th>
+            <th>EXCHANGE RATE</th>
+            <th>WE SELL</th>
           </tr>
-        ))}
-      </table>
+          {curse.map((item, index) => (
+            <tr key={index}>
+              <td>{item.name}</td>
+              <td>{getWeBuy(item.rate, item.margin)}</td>
+              <td>{item.rate}</td>
+              <td>{getWeSell(item.rate, item.margin)}</td>
+            </tr>
+          ))}
+        </table>
+      </div>
+      <div className="info">
+        <p className="small">* base currency is EUR<br />
+        * As for the API, <a href="https://api.exchangeratesapi.io">https://api.exchangeratesapi.io/</a></p>
+      </div>
     </>
   );
 }
