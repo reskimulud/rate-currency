@@ -63,25 +63,34 @@ const App = () => {
       })
   }, [])
 
+  console.log(curse)
+
   return (
     <>
       <div className="container">
+        {curse.length > 0 ?
         <table>
-          <tr>
-            <th></th>
-            <th>WE BUY</th>
-            <th>EXCHANGE RATE</th>
-            <th>WE SELL</th>
-          </tr>
-          {curse.map((item, index) => (
-            <tr key={index}>
-              <td>{item.name}</td>
-              <td>{getWeBuy(item.rate, item.margin)}</td>
-              <td>{item.rate}</td>
-              <td>{getWeSell(item.rate, item.margin)}</td>
+          <thead>
+            <tr>
+              <th></th>
+              <th>WE BUY</th>
+              <th>EXCHANGE RATE</th>
+              <th>WE SELL</th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {curse.map((item, index) => (
+              <tr key={index}>
+                <td>{item.name}</td>
+                <td>{getWeBuy(item.rate, item.margin)}</td>
+                <td>{item.rate}</td>
+                <td>{getWeSell(item.rate, item.margin)}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
+        : 
+        <div class="loadingio-spinner-spinner-b7gflaxdfsr"><div class="ldio-kxgq8sazs0a"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>}
       </div>
       <div className="info">
         <p className="small">* base currency is EUR<br />
